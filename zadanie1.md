@@ -3,7 +3,7 @@ Zadanie 1 - Sprawozdanie
 Autor: Szymon Kita
 
 Część obowiązkowa:
-Kod pliku app.js:
+1. Kod pliku app.js:
 //Dołączenie potrzebnych bibliotek
 const express = reqiure('express');
 const requestIp = require('request-ip');
@@ -31,7 +31,7 @@ const app = express();
 
 
 app.listen(port, () => `Serwer działa na porcie ${port}`);
-Kod pliku Dockerfile
+2. Kod pliku Dockerfile
 	#Utworzenie warstwy roboczej
 FROM scratch as etap1
 
@@ -91,7 +91,7 @@ RUN npm install express request-ip geoip-lite
 
 ENTRYPOINT ["node", "app.js"]
 
-Polecenia
+3.Polecenia
 Zbudowanie obrazu:
 docker build -t local/zadanie1:v1 .
 Uruchomienie kontenera na podstawie obrazu
@@ -100,3 +100,4 @@ Informacje wygenerowane przez serwer
 docker inspect local/zadanie1:v1
 Sprawdzenie liczby warstw:
 docker history local/zadanie1:v1
+Zrzut ekranu działającej aplikacji został umieszczony jako zadanie.png
